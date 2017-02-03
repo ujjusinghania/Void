@@ -20,6 +20,9 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func textButtonPress(_ sender: AnyObject) {
+        performSegue(withIdentifier: "textViewSegue", sender: 0)
+    }
 
 }
 
