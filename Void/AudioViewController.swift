@@ -44,9 +44,16 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         try! audioSession.setActive(false)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "PlayAudioViewSegue") {
+            let destinationVC = segue.destination as! PlayAudioViewController
+            destinationVC.audioFileURL = sender as! NSURL
+        }
+    }
+    
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag) {
-            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+            performSegue(withIdentifier: "PlayAudioViewSegue", sender: audioRecord.url)
         }
     }
 
