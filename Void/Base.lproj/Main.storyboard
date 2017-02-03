@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +24,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-XR-UKA">
                                         <color key="backgroundColor" red="1" green="0.016771198362626527" blue="0.95137430357654629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="GSO-Ep-EXA" kind="show" id="QEm-P2-XSf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Hb-yfa">
                                         <color key="backgroundColor" red="1" green="0.92600919398433035" blue="0.62090528615431306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-7.2000000000000002" y="32.833583208395808"/>
         </scene>
-        <!--View Controller-->
+        <!--Text View Controller-->
         <scene sceneID="qic-w6-IfW">
             <objects>
-                <viewController id="GSO-Ep-EXA" sceneMemberID="viewController">
+                <viewController id="GSO-Ep-EXA" customClass="TextViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WWP-bv-dPl"/>
                         <viewControllerLayoutGuide type="bottom" id="jk2-yW-Ea1"/>
@@ -62,12 +66,34 @@
                     <view key="view" contentMode="scaleToFill" id="ug2-H0-aAY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-SH-2T3">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="249" id="DJJ-PT-GmK"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odM-hY-MeE">
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="odM-hY-MeE" firstAttribute="top" secondItem="r6Q-SH-2T3" secondAttribute="bottom" constant="27" id="Q2f-uH-hdc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r6Q-SH-2T3" secondAttribute="trailing" constant="24" id="Spd-GI-oWJ"/>
+                            <constraint firstItem="odM-hY-MeE" firstAttribute="centerX" secondItem="r6Q-SH-2T3" secondAttribute="centerX" id="dZy-Pq-x2a"/>
+                            <constraint firstItem="r6Q-SH-2T3" firstAttribute="leading" secondItem="ug2-H0-aAY" secondAttribute="leadingMargin" constant="24" id="f87-cH-jU8"/>
+                            <constraint firstItem="r6Q-SH-2T3" firstAttribute="centerX" secondItem="ug2-H0-aAY" secondAttribute="centerX" id="umd-NB-yEf"/>
+                            <constraint firstItem="r6Q-SH-2T3" firstAttribute="top" secondItem="WWP-bv-dPl" secondAttribute="bottom" constant="75" id="zgd-ZO-w2r"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebk-M5-jEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="-477"/>
+            <point key="canvasLocation" x="813.60000000000002" y="-477.21139430284859"/>
         </scene>
     </scenes>
 </document>
