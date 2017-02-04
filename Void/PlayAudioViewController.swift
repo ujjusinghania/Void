@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PlayAudioViewController: UIViewController {
     
     var audioFileURL : NSURL!
+    var recordedAudioFile: AVAudioRecorder!
+    var soundPlay: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,20 +21,31 @@ class PlayAudioViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func playRecording(_ sender: AnyObject) {
+        do {
+            try soundPlay = AVAudioPlayer(contentsOf: audioFileURL! as URL)
+        }
+        catch {
+            print("AVAudioRecorder can't play the file.")
+        }
+        soundPlay.volume = 1.0
+        soundPlay.prepareToPlay()
+        soundPlay.play()
+    }
+    
+    @IBAction func pauseRecording(_ sender: AnyObject) {
+        soundPlay.stop()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func deleteUserInputs(_ sender: AnyObject) {
+        try! recordedAudioFile = AVAudioRecorder(url: audioFileURL! as URL, settings: [:])
+        recordedAudioFile.deleteRecording()
     }
-    */
+    
 
 }

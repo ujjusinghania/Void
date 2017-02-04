@@ -118,17 +118,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-xz-szq">
-                                <frame key="frameInset" minX="136" minY="205" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Recording"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27m-fF-XKD">
-                                <frame key="frameInset" minX="127" minY="385" width="121" height="30"/>
+                                <frame key="frameInset" minX="127" minY="393" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send To The Void"/>
                                 <connections>
+                                    <action selector="deleteUserInputs:" destination="T78-zP-G2z" eventType="touchUpInside" id="mVx-zo-eBL"/>
                                     <segue destination="FKH-Aa-hyx" kind="show" id="jNH-PO-bE5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-QZ-nwr">
+                                <frame key="frameInset" minX="129" minY="275" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pause Recording"/>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="X0Q-lz-XDK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-xz-szq">
+                                <frame key="frameInset" minX="136" minY="203" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play Recording"/>
+                                <connections>
+                                    <action selector="playRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="Tk1-a2-1UC"/>
                                 </connections>
                             </button>
                         </subviews>
