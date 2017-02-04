@@ -8,11 +8,27 @@
 
 import UIKit
 
-class TextViewController: UIViewController {
+class TextViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet weak var textView: UITextView!
+    var flag: Bool = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textView.delegate = self
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if (flag == false) {
+            textView.text = ""
+            textView.textColor = UIColor.black
+            flag = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textView.layer.borderWidth = 1.0
+        textView.layer.borderColor = UIColor.black.cgColor
         // Do any additional setup after loading the view.
     }
 
@@ -20,16 +36,4 @@ class TextViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

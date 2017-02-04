@@ -16,28 +16,28 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-k4-8gU">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-XR-UKA">
                                         <color key="backgroundColor" red="1" green="0.016771198362626527" blue="0.95137430357654629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Text"/>
                                         <connections>
                                             <segue destination="GSO-Ep-EXA" kind="show" id="Xa6-4f-Wx5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Hb-yfa">
                                         <color key="backgroundColor" red="1" green="0.92600919398433035" blue="0.62090528615431306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Audio"/>
                                         <connections>
                                             <segue destination="oN8-fN-Ve6" kind="show" id="Yga-aL-0Ok"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-0W-iOg">
                                         <color key="backgroundColor" red="0.96158309932534469" green="0.7888978533215113" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Video"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -65,7 +65,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DHC-sx-KCR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lPD-aE-Lwg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-ad-KCN">
@@ -108,6 +108,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resetRecording" destination="gA1-SI-bk6" id="mCj-x3-tIv"/>
+                        <outlet property="startRecording" destination="MWP-ad-KCN" id="frc-da-pj1"/>
+                        <outlet property="stopRecording" destination="IrU-gA-7CR" id="Ty9-cW-o4l"/>
                         <outlet property="timeLabel" destination="IgZ-iM-J6c" id="I5f-St-P0T"/>
                         <segue destination="T78-zP-G2z" kind="show" identifier="ToPlayAudioViewSegue" id="EQk-57-XF6"/>
                     </connections>
@@ -125,42 +128,52 @@
                         <viewControllerLayoutGuide type="bottom" id="uTY-FU-l5v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sEe-Uw-WXU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27m-fF-XKD">
-                                <frame key="frameInset" minX="127" minY="393" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send To The Void"/>
-                                <connections>
-                                    <action selector="deleteUserInputs:" destination="T78-zP-G2z" eventType="touchUpInside" id="mVx-zo-eBL"/>
-                                    <segue destination="FKH-Aa-hyx" kind="show" id="jNH-PO-bE5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-QZ-nwr">
-                                <frame key="frameInset" minX="129" minY="275" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pause Recording"/>
-                                <connections>
-                                    <action selector="pauseRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="X0Q-lz-XDK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-xz-szq">
-                                <frame key="frameInset" minX="136" minY="203" width="103" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-xz-szq">
+                                <frame key="frameInset" minX="152" minY="192" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play Recording"/>
                                 <connections>
                                     <action selector="playRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="Tk1-a2-1UC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-QZ-nwr">
+                                <frame key="frameInset" minX="149" minY="230" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pause Recording"/>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="X0Q-lz-XDK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00/00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLg-4z-aa1">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="27m-fF-XKD">
+                                <frame key="frameInset" minX="149" minY="348" width="118" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send to The Void"/>
+                                <connections>
+                                    <action selector="deleteUserInputs:" destination="T78-zP-G2z" eventType="touchUpInside" id="mVx-zo-eBL"/>
+                                    <segue destination="FKH-Aa-hyx" kind="show" id="jNH-PO-bE5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="BLg-4z-aa1" firstAttribute="top" secondItem="K1b-N3-owq" secondAttribute="bottom" constant="88" id="7hP-E8-7Hc"/>
+                            <constraint firstItem="BLg-4z-aa1" firstAttribute="centerX" secondItem="sEe-Uw-WXU" secondAttribute="centerX" id="cqE-sy-xGl"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XX-Pw-fTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="215"/>
+            <point key="canvasLocation" x="2600.8000000000002" y="211.84407796101951"/>
         </scene>
         <!--Void View Controller-->
         <scene sceneID="0Zo-uB-aKO">
@@ -171,11 +184,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TbU-jB-fef"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D4B-G7-emC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Void" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-wC-Gg3">
-                                <frame key="frameInset" minX="108" minY="323" width="159" height="21"/>
+                                <frame key="frameInset" minX="81" minY="464" width="159" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -193,23 +206,23 @@
         <!--Text View Controller-->
         <scene sceneID="qic-w6-IfW">
             <objects>
-                <viewController id="GSO-Ep-EXA" customClass="TextViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="GSO-Ep-EXA" customClass="TextViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WWP-bv-dPl"/>
                         <viewControllerLayoutGuide type="bottom" id="jk2-yW-Ea1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ug2-H0-aAY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-SH-2T3">
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Enter Text" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-SH-2T3">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="249" id="DJJ-PT-GmK"/>
+                                    <constraint firstAttribute="height" constant="248" id="DJJ-PT-GmK"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.52398397020725396" green="0.52398397020725396" blue="0.52398397020725396" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odM-hY-MeE">
                                 <state key="normal" title="Send To The Void"/>
@@ -228,6 +241,9 @@
                             <constraint firstItem="r6Q-SH-2T3" firstAttribute="top" secondItem="WWP-bv-dPl" secondAttribute="bottom" constant="75" id="zgd-ZO-w2r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="r6Q-SH-2T3" id="yht-t0-lv7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebk-M5-jEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,6 +274,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jNH-PO-bE5"/>
+        <segue reference="sEc-ZE-bvI"/>
     </inferredMetricsTieBreakers>
 </document>

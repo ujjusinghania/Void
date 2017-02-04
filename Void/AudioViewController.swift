@@ -11,6 +11,9 @@ import AVFoundation
 
 class AudioViewController: UIViewController, AVAudioRecorderDelegate {
 
+    @IBOutlet weak var startRecording: UIButton!
+    @IBOutlet weak var stopRecording: UIButton!
+    @IBOutlet weak var resetRecording: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
     var audioRecord: AVAudioRecorder!
     var timeKeeper: Timer!
@@ -18,6 +21,19 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
     var minutes: Int! = 0
     var hours: Int! = 0
     var filePath: URL!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (seconds > 0 || minutes > 0 || hours > 0) {
+            startRecording.isEnabled = false
+            stopRecording.isEnabled = false
+            resetRecording.isEnabled = true
+        }
+        else {
+            startRecording.isEnabled = true
+            stopRecording.isEnabled = false
+            resetRecording.isEnabled = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +53,8 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         timeLabel.text = getTimeLabel()
         try! audioRecord = AVAudioRecorder(url: filePath, settings: [:])
         audioRecord.deleteRecording()
+        resetRecording.isEnabled = false
+        startRecording.isEnabled = true
     }
     
     func fixTime() {
@@ -82,6 +100,9 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func startRecording(sender: AnyObject) {
+        
+        startRecording.isEnabled = false
+        
         let directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) [0] as String
         let audioFileName = "voice.wav"
         let pathToFile = URL(string: directoryPath + "/" + audioFileName)
@@ -96,6 +117,8 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecord.record()
         
         timeKeeper = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
+        
+        stopRecording.isEnabled = true
     }
     
     @IBAction func stopRecording(sender: AnyObject) {
@@ -103,6 +126,8 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         timeKeeper.invalidate()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+        resetRecording.isEnabled = true
+        stopRecording.isEnabled = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
