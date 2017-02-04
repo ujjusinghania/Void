@@ -85,12 +85,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA1-SI-bk6">
+                                <state key="normal" title="Reset Recording"/>
+                                <connections>
+                                    <action selector="resetViewController:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="lwC-fI-AwF"/>
+                                    <action selector="stopRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="scq-Eh-SBj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gA1-SI-bk6" firstAttribute="centerX" secondItem="lPD-aE-Lwg" secondAttribute="centerX" id="6az-oh-jqV"/>
+                            <constraint firstItem="gA1-SI-bk6" firstAttribute="top" secondItem="MWP-ad-KCN" secondAttribute="bottom" constant="26" id="CyH-xI-JEZ"/>
                             <constraint firstItem="IrU-gA-7CR" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="39.5" id="DeS-Dd-shL"/>
                             <constraint firstItem="MWP-ad-KCN" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="31" id="Lk2-2S-sYG"/>
                             <constraint firstItem="MWP-ad-KCN" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="39.5" id="ZkM-Fm-bTl"/>
+                            <constraint firstItem="gA1-SI-bk6" firstAttribute="top" secondItem="IrU-gA-7CR" secondAttribute="bottom" constant="26" id="aLO-Dw-x4y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IrU-gA-7CR" secondAttribute="trailing" constant="32" id="am7-e1-jR1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IgZ-iM-J6c" secondAttribute="trailing" constant="68" id="fw7-IL-jNa"/>
                             <constraint firstItem="IgZ-iM-J6c" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="66" id="goB-cB-hXy"/>
@@ -109,7 +119,7 @@
         <!--Play Audio View Controller-->
         <scene sceneID="a9m-tL-Sgi">
             <objects>
-                <viewController id="T78-zP-G2z" customClass="PlayAudioViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="T78-zP-G2z" customClass="PlayAudioViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K1b-N3-owq"/>
                         <viewControllerLayoutGuide type="bottom" id="uTY-FU-l5v"/>
@@ -145,6 +155,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XX-Pw-fTT" userLabel="First Responder" sceneMemberID="firstResponder"/>

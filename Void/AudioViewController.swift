@@ -17,6 +17,7 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
     var seconds: Int! = 0
     var minutes: Int! = 0
     var hours: Int! = 0
+    var filePath: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,15 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func resetViewController(_ sender: AnyObject) {
+        seconds = 0
+        minutes = 0
+        hours = 0
+        timeLabel.text = getTimeLabel()
+        try! audioRecord = AVAudioRecorder(url: filePath, settings: [:])
+        audioRecord.deleteRecording()
     }
     
     func fixTime() {
@@ -75,6 +85,7 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         let directoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) [0] as String
         let audioFileName = "voice.wav"
         let pathToFile = URL(string: directoryPath + "/" + audioFileName)
+        filePath = pathToFile
         
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
