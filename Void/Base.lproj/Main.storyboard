@@ -68,32 +68,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-ad-KCN">
-                                <frame key="frameInset" minX="49" minY="210" width="108" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-ad-KCN">
                                 <state key="normal" title="Start Recording"/>
                                 <connections>
                                     <action selector="startRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="gpb-v0-HnN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-gA-7CR">
-                                <frame key="frameInset" minX="212" minY="210" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-gA-7CR">
                                 <state key="normal" title="Stop Recording"/>
                                 <connections>
                                     <action selector="stopRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="mHl-SU-iuT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-iM-J6c">
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IrU-gA-7CR" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="39.5" id="DeS-Dd-shL"/>
+                            <constraint firstItem="MWP-ad-KCN" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="31" id="Lk2-2S-sYG"/>
+                            <constraint firstItem="MWP-ad-KCN" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="39.5" id="ZkM-Fm-bTl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IrU-gA-7CR" secondAttribute="trailing" constant="32" id="am7-e1-jR1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IgZ-iM-J6c" secondAttribute="trailing" constant="68" id="fw7-IL-jNa"/>
+                            <constraint firstItem="IgZ-iM-J6c" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="66" id="goB-cB-hXy"/>
+                            <constraint firstItem="IgZ-iM-J6c" firstAttribute="top" secondItem="Vt5-jW-Odx" secondAttribute="bottom" constant="149" id="hwC-eI-ehF"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="timeLabel" destination="IgZ-iM-J6c" id="I5f-St-P0T"/>
                         <segue destination="T78-zP-G2z" kind="show" identifier="ToPlayAudioViewSegue" id="EQk-57-XF6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcF-Cd-xlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="215"/>
+            <point key="canvasLocation" x="1776.8" y="214.54272863568218"/>
         </scene>
         <!--Play Audio View Controller-->
         <scene sceneID="a9m-tL-Sgi">
@@ -116,6 +127,9 @@
                                 <frame key="frameInset" minX="127" minY="385" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send To The Void"/>
+                                <connections>
+                                    <segue destination="FKH-Aa-hyx" kind="show" id="jNH-PO-bE5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,6 +138,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XX-Pw-fTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2607" y="215"/>
+        </scene>
+        <!--Void View Controller-->
+        <scene sceneID="0Zo-uB-aKO">
+            <objects>
+                <viewController wantsFullScreenLayout="YES" modalTransitionStyle="partialCurl" id="FKH-Aa-hyx" customClass="VoidViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EBz-E9-MO3"/>
+                        <viewControllerLayoutGuide type="bottom" id="TbU-jB-fef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D4B-G7-emC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Void" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-wC-Gg3">
+                                <frame key="frameInset" minX="108" minY="323" width="159" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2OZ-8V-r0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3518" y="215"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="qic-w6-IfW">
@@ -148,6 +190,9 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odM-hY-MeE">
                                 <state key="normal" title="Send To The Void"/>
+                                <connections>
+                                    <segue destination="FKH-Aa-hyx" kind="show" id="sEc-ZE-bvI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,4 +234,7 @@
             <point key="canvasLocation" x="-4" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jNH-PO-bE5"/>
+    </inferredMetricsTieBreakers>
 </document>

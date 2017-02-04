@@ -11,7 +11,12 @@ import AVFoundation
 
 class AudioViewController: UIViewController, AVAudioRecorderDelegate {
 
+    @IBOutlet weak var timeLabel: UILabel!
     var audioRecord: AVAudioRecorder!
+    var timeKeeper: Timer!
+    var seconds: Int! = 0
+    var minutes: Int! = 0
+    var hours: Int! = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,48 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func fixTime() {
+        if (seconds == 60) {
+            seconds = seconds - 60
+            minutes = minutes + 1
+            
+        }
+        if (minutes == 60) {
+            minutes = minutes - 60
+            hours = hours + 1
+            
+        }
+    }
+    
+    func getTimeLabel() -> String {
+        var label: String = ""
+        if (hours < 10) {
+            label = label + "0" + String(hours) + ":"
+        }
+        else {
+            label = label + String(hours) + ":"
+        }
+        if (minutes < 10) {
+            label = label + "0" + String(minutes) + ":"
+        }
+        else {
+            label = label + String(minutes) + ":"
+        }
+        if (seconds < 10) {
+            label = label + "0" + String(seconds)
+        }
+        else {
+            label = label + String(seconds)
+        }
+        return label
+    }
+    
+    func updateTimeLabel() {
+        seconds = seconds + 1
+        fixTime()
+        timeLabel.text = getTimeLabel()
     }
     
     @IBAction func startRecording(sender: AnyObject) {
@@ -36,10 +83,13 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecord.delegate = self
         audioRecord.prepareToRecord()
         audioRecord.record()
+        
+        timeKeeper = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
     }
     
     @IBAction func stopRecording(sender: AnyObject) {
         audioRecord.stop()
+        timeKeeper.invalidate()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
