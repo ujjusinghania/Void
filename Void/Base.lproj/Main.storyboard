@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-k4-8gU">
@@ -34,10 +34,6 @@
                                         <connections>
                                             <segue destination="oN8-fN-Ve6" kind="show" id="Yga-aL-0Ok"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-0W-iOg">
-                                        <color key="backgroundColor" red="0.96158309932534469" green="0.7888978533215113" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Video"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -65,46 +61,46 @@
                         <viewControllerLayoutGuide type="bottom" id="DHC-sx-KCR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lPD-aE-Lwg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-ad-KCN">
-                                <state key="normal" title="Start Recording"/>
-                                <connections>
-                                    <action selector="startRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="gpb-v0-HnN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-gA-7CR">
-                                <state key="normal" title="Stop Recording"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrU-gA-7CR">
+                                <state key="normal" image="Stop Button"/>
                                 <connections>
                                     <action selector="stopRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="mHl-SU-iuT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-iM-J6c">
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA1-SI-bk6">
-                                <state key="normal" title="Reset Recording"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA1-SI-bk6">
+                                <state key="normal" image="Reset Button"/>
                                 <connections>
                                     <action selector="resetViewController:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="lwC-fI-AwF"/>
                                     <action selector="stopRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="scq-Eh-SBj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWP-ad-KCN">
+                                <state key="normal" image="Play Button"/>
+                                <connections>
+                                    <action selector="startRecordingWithSender:" destination="oN8-fN-Ve6" eventType="touchUpInside" id="gpb-v0-HnN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gA1-SI-bk6" firstAttribute="centerX" secondItem="lPD-aE-Lwg" secondAttribute="centerX" id="6az-oh-jqV"/>
-                            <constraint firstItem="gA1-SI-bk6" firstAttribute="top" secondItem="MWP-ad-KCN" secondAttribute="bottom" constant="26" id="CyH-xI-JEZ"/>
-                            <constraint firstItem="IrU-gA-7CR" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="39.5" id="DeS-Dd-shL"/>
-                            <constraint firstItem="MWP-ad-KCN" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="31" id="Lk2-2S-sYG"/>
-                            <constraint firstItem="MWP-ad-KCN" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="39.5" id="ZkM-Fm-bTl"/>
-                            <constraint firstItem="gA1-SI-bk6" firstAttribute="top" secondItem="IrU-gA-7CR" secondAttribute="bottom" constant="26" id="aLO-Dw-x4y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IrU-gA-7CR" secondAttribute="trailing" constant="32" id="am7-e1-jR1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gA1-SI-bk6" secondAttribute="trailing" constant="68" id="AZW-0g-L45"/>
+                            <constraint firstItem="gA1-SI-bk6" firstAttribute="leading" secondItem="IrU-gA-7CR" secondAttribute="trailing" constant="10" id="Gad-xl-Yxs"/>
+                            <constraint firstItem="IrU-gA-7CR" firstAttribute="leading" secondItem="MWP-ad-KCN" secondAttribute="trailing" constant="12" id="UA9-6e-Yrc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IgZ-iM-J6c" secondAttribute="trailing" constant="68" id="fw7-IL-jNa"/>
                             <constraint firstItem="IgZ-iM-J6c" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="66" id="goB-cB-hXy"/>
-                            <constraint firstItem="IgZ-iM-J6c" firstAttribute="top" secondItem="Vt5-jW-Odx" secondAttribute="bottom" constant="149" id="hwC-eI-ehF"/>
+                            <constraint firstItem="MWP-ad-KCN" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="29" id="gu5-lC-mqR"/>
+                            <constraint firstItem="gA1-SI-bk6" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="29" id="hXZ-ea-DZd"/>
+                            <constraint firstItem="IgZ-iM-J6c" firstAttribute="top" secondItem="Vt5-jW-Odx" secondAttribute="bottom" constant="137" id="hwC-eI-ehF"/>
+                            <constraint firstItem="IrU-gA-7CR" firstAttribute="top" secondItem="IgZ-iM-J6c" secondAttribute="bottom" constant="29" id="j0I-OA-QML"/>
+                            <constraint firstItem="MWP-ad-KCN" firstAttribute="leading" secondItem="lPD-aE-Lwg" secondAttribute="leadingMargin" constant="66" id="xRg-cJ-SzL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -117,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HcF-Cd-xlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="214.54272863568218"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="212.74362818590706"/>
         </scene>
         <!--Play Audio View Controller-->
         <scene sceneID="a9m-tL-Sgi">
@@ -128,25 +124,9 @@
                         <viewControllerLayoutGuide type="bottom" id="uTY-FU-l5v"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sEe-Uw-WXU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-xz-szq">
-                                <frame key="frameInset" minX="152" minY="192" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Recording"/>
-                                <connections>
-                                    <action selector="playRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="Tk1-a2-1UC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-QZ-nwr">
-                                <frame key="frameInset" minX="149" minY="230" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Pause Recording"/>
-                                <connections>
-                                    <action selector="pauseRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="X0Q-lz-XDK"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00/00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLg-4z-aa1">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -161,6 +141,22 @@
                                     <segue destination="FKH-Aa-hyx" kind="show" id="jNH-PO-bE5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvS-xz-szq">
+                                <frame key="frameInset" minX="112" minY="181" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Play Button"/>
+                                <connections>
+                                    <action selector="playRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="Tk1-a2-1UC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-QZ-nwr">
+                                <frame key="frameInset" minX="164" minY="182" width="44" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Pause Button"/>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="T78-zP-G2z" eventType="touchUpInside" id="X0Q-lz-XDK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -173,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6XX-Pw-fTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600.8000000000002" y="211.84407796101951"/>
+            <point key="canvasLocation" x="2600.625" y="211.26760563380282"/>
         </scene>
         <!--Void View Controller-->
         <scene sceneID="0Zo-uB-aKO">
@@ -184,7 +180,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TbU-jB-fef"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D4B-G7-emC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Void" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-wC-Gg3">
@@ -212,7 +208,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jk2-yW-Ea1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ug2-H0-aAY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Enter Text" translatesAutoresizingMaskIntoConstraints="NO" id="r6Q-SH-2T3">
@@ -273,7 +269,13 @@
             <point key="canvasLocation" x="-4" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pause Button" width="24" height="24"/>
+        <image name="Play Button" width="24" height="24"/>
+        <image name="Reset Button" width="24" height="24"/>
+        <image name="Stop Button" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sEc-ZE-bvI"/>
+        <segue reference="jNH-PO-bE5"/>
     </inferredMetricsTieBreakers>
 </document>
