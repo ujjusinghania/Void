@@ -128,19 +128,7 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
         try! audioSession.setActive(false)
         resetRecording.isEnabled = true
         stopRecording.isEnabled = false
+        try! audioRecord = AVAudioRecorder(url: filePath! as URL, settings: [:])
+        audioRecord.deleteRecording()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "ToPlayAudioViewSegue") {
-            let destinationVC = segue.destination as! PlayAudioViewController
-            destinationVC.audioFileURL = sender as! NSURL
-        }
-    }
-    
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        if (flag) {
-            performSegue(withIdentifier: "ToPlayAudioViewSegue", sender: audioRecord.url)
-        }
-    }
-
 }

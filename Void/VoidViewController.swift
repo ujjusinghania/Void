@@ -10,8 +10,29 @@ import UIKit
 
 class VoidViewController: UIViewController {
     
+    @IBOutlet weak var triangleAnimateImageView: UIImageView!
+    var triangleAnimateImageCount: Int = 1
+    
+    
+    func animateTriangle() {
+        
+        var triangleAnimateImageArray = [UIImage]()
+        
+        for pictureNumber in 1...19
+        {
+            let imageName : String = "Triangle-Animate-\(pictureNumber).png"
+            let image  = UIImage(named:imageName)
+            triangleAnimateImageArray.append(image!)
+        }
+        
+        triangleAnimateImageView.animationImages = triangleAnimateImageArray
+        triangleAnimateImageView.animationDuration = 0.3333333333
+        triangleAnimateImageView.startAnimating()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        animateTriangle()
     }
 
     override func viewDidLoad() {

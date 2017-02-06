@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D900A7BE1E44FF700028FE0C /* PlayAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D900A7BD1E44FF700028FE0C /* PlayAudioViewController.swift */; };
 		D9543C801E450454006D98C6 /* VoidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9543C7F1E450454006D98C6 /* VoidViewController.swift */; };
 		D9FE728E1E44038B0046666B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE728D1E44038B0046666B /* AppDelegate.swift */; };
 		D9FE72901E44038B0046666B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FE728F1E44038B0046666B /* MainViewController.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D900A7BD1E44FF700028FE0C /* PlayAudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayAudioViewController.swift; sourceTree = "<group>"; };
 		D9543C7F1E450454006D98C6 /* VoidViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoidViewController.swift; sourceTree = "<group>"; };
 		D9FE728A1E44038B0046666B /* Void.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Void.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9FE728D1E44038B0046666B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				D9FE72BB1E4403ED0046666B /* TextViewController.swift */,
 				D9FE72BD1E4403FF0046666B /* AudioViewController.swift */,
 				D9FE72C01E4404B30046666B /* VideoViewController.swift */,
-				D900A7BD1E44FF700028FE0C /* PlayAudioViewController.swift */,
 			);
 			name = InputViewControllers;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 				D9FE72BE1E4403FF0046666B /* AudioViewController.swift in Sources */,
 				D9FE72C11E4404B30046666B /* VideoViewController.swift in Sources */,
 				D9543C801E450454006D98C6 /* VoidViewController.swift in Sources */,
-				D900A7BE1E44FF700028FE0C /* PlayAudioViewController.swift in Sources */,
 				D9FE72BC1E4403ED0046666B /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
