@@ -11,6 +11,7 @@ import UIKit
 class QuoteViewController: UIViewController {
 
     @IBOutlet weak var pressAnywhereLabel: UILabel!
+    @IBOutlet weak var nextViewButton: UIButton!
     @IBOutlet weak var quoteLabel: UILabel!
     var letterAppearer: Timer!
     var quoteKeeper: String = "The void is now open. Here, no one else can hear you. Here, you can speak your mind freely. What is said in the void, stays there."
@@ -20,6 +21,7 @@ class QuoteViewController: UIViewController {
         if (letterCounter == quoteKeeper.endIndex) {
             letterAppearer.invalidate()
             pressAnywhereLabel.text = "Touch Anywhere To Continue"
+            nextViewButton.isEnabled = true
             return
         }
         quoteLabel.text = quoteLabel.text! + String(quoteKeeper[letterCounter])
@@ -29,6 +31,7 @@ class QuoteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         quoteLabel.textColor = UIColor.white
         letterCounter = quoteKeeper.startIndex
+        nextViewButton.isEnabled = false
     }
     
     override func viewDidLoad() {

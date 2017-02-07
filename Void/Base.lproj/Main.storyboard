@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Void -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Void" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,16 +21,14 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-k4-8gU">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-XR-UKA">
-                                        <color key="backgroundColor" red="1" green="0.016771198362626527" blue="0.95137430357654629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Text"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-XR-UKA">
+                                        <state key="normal" title="Text" backgroundImage="Blue Button"/>
                                         <connections>
                                             <segue destination="GSO-Ep-EXA" kind="show" id="Xa6-4f-Wx5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Hb-yfa">
-                                        <color key="backgroundColor" red="1" green="0.92600919398433035" blue="0.62090528615431306" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Audio"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1Z-Hb-yfa">
+                                        <state key="normal" title="Audio" backgroundImage="Green Button"/>
                                         <connections>
                                             <segue destination="oN8-fN-Ve6" kind="show" id="Yga-aL-0Ok"/>
                                         </connections>
@@ -40,17 +38,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sOE-k4-8gU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GMk-pm-2U7"/>
-                            <constraint firstItem="sOE-k4-8gU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Xjx-Ke-F0i"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sOE-k4-8gU" secondAttribute="bottom" id="dZS-Ud-g17"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sOE-k4-8gU" secondAttribute="trailing" id="ytc-d3-GEP"/>
+                            <constraint firstAttribute="bottom" secondItem="sOE-k4-8gU" secondAttribute="bottom" id="27S-Z1-CrW"/>
+                            <constraint firstItem="sOE-k4-8gU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LUW-dC-nWe"/>
+                            <constraint firstAttribute="trailing" secondItem="sOE-k4-8gU" secondAttribute="trailing" id="qw6-h0-Kq4"/>
+                            <constraint firstItem="sOE-k4-8gU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xnM-IQ-I5M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="huY-H8-qIZ"/>
+                    <navigationItem key="navigationItem" title="Void " id="huY-H8-qIZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="-77"/>
+            <point key="canvasLocation" x="729" y="-122"/>
         </scene>
         <!--Audio View Controller-->
         <scene sceneID="VEL-yy-cDk">
@@ -149,9 +147,7 @@
                                     <constraint firstAttribute="height" constant="158" id="Wzc-AN-Dns"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to the Void" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-wC-Gg3">
-                                <frame key="frameInset" minX="128" minY="658" width="159" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Void" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya6-wC-Gg3">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -159,6 +155,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ya6-wC-Gg3" firstAttribute="centerX" secondItem="D4B-G7-emC" secondAttribute="centerX" id="68j-dd-q4a"/>
+                            <constraint firstItem="TbU-jB-fef" firstAttribute="top" secondItem="Ya6-wC-Gg3" secondAttribute="bottom" constant="57" id="Xn6-s8-o7Z"/>
                             <constraint firstItem="cUt-uU-Xds" firstAttribute="centerX" secondItem="D4B-G7-emC" secondAttribute="centerX" id="ZTA-fd-HSi"/>
                             <constraint firstItem="cUt-uU-Xds" firstAttribute="centerY" secondItem="D4B-G7-emC" secondAttribute="centerY" id="ah1-hw-Nco"/>
                         </constraints>
@@ -170,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OZ-8V-r0n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3106" y="-76"/>
+            <point key="canvasLocation" x="2791" y="-122"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="qic-w6-IfW">
@@ -276,13 +274,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nextViewButton" destination="bI0-m5-pKm" id="dJg-8t-sqS"/>
                         <outlet property="pressAnywhereLabel" destination="yNL-tR-4ju" id="pyY-Ts-Jls"/>
                         <outlet property="quoteLabel" destination="1eB-kT-bk6" id="y0s-Lp-7M2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEo-Vs-n2N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-920.28985507246387" y="-76.630434782608702"/>
+            <point key="canvasLocation" x="-923" y="-122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="48f-cm-zyg">
@@ -305,18 +304,20 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPW-lp-ClH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="-77"/>
+            <point key="canvasLocation" x="-116" y="-122"/>
         </scene>
     </scenes>
     <resources>
         <image name="Background Faded" width="1080" height="1920"/>
         <image name="Background Starry" width="1080" height="1920"/>
+        <image name="Blue Button" width="1080" height="1920"/>
+        <image name="Green Button" width="1080" height="1920"/>
         <image name="Play Button" width="24" height="24"/>
         <image name="Reset Button" width="24" height="24"/>
         <image name="Stop Button" width="24" height="24"/>
         <image name="Void Button" width="462" height="462"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6cq-YE-4ta"/>
+        <segue reference="sEc-ZE-bvI"/>
     </inferredMetricsTieBreakers>
 </document>
