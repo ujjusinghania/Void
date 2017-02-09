@@ -15,6 +15,7 @@ class TextViewController: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         textView.delegate = self
+        self.navigationController?.navigationBar.tintColor = UIColor.white;
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

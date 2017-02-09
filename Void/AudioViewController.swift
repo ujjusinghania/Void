@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class AudioViewController: UIViewController, AVAudioRecorderDelegate {
-
+    
     @IBOutlet weak var startRecording: UIButton!
     @IBOutlet weak var stopRecording: UIButton!
     @IBOutlet weak var resetRecording: UIButton!
@@ -23,24 +23,18 @@ class AudioViewController: UIViewController, AVAudioRecorderDelegate {
     var filePath: URL!
     
     override func viewWillAppear(_ animated: Bool) {
-        if (seconds > 0 || minutes > 0 || hours > 0) {
-            startRecording.isEnabled = false
-            stopRecording.isEnabled = false
-            resetRecording.isEnabled = true
-        }
-        else {
-            startRecording.isEnabled = true
-            stopRecording.isEnabled = false
-            resetRecording.isEnabled = false
-        }
+        self.navigationController?.navigationBar.tintColor = UIColor.white;
+        startRecording.isEnabled = true
+        stopRecording.isEnabled = false
+        resetRecording.isEnabled = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

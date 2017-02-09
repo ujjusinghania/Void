@@ -36,7 +36,7 @@ class QuoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        letterAppearer = Timer.scheduledTimer(timeInterval: 0.03, target: self, selector: #selector(self.updateQuote), userInfo: nil, repeats: true)
+        letterAppearer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(self.updateQuote), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
