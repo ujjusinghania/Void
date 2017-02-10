@@ -10,8 +10,16 @@ import UIKit
 
 class VoidViewController: UIViewController {
     
+    // Animation Global Variables
+    
+    @IBOutlet weak var blackHoleAnimateImageView: UIImageView!
     @IBOutlet weak var triangleAnimateImageView: UIImageView!
     var triangleAnimateImageCount: Int = 1
+    var animationCounter: Int = 1
+    var animationTimeKeeper: Timer!
+    
+    // Quote Global Variables
+    
     var quoteLibrary: [String] = ["All our dreams can come true if we have the courage to pursue them. - Walt Disney",
         "Someone is sitting in the shade today because someone planted a tree a long time ago. - Warren Buffett",
         "You only live once, but if you do it right, once is enough. - Mae West",
@@ -39,6 +47,32 @@ class VoidViewController: UIViewController {
     var currentQuote: String!
     var quoteTimer: String!
     
+    func animateView() {
+        if (animationCounter == 1) {
+            animateTriangle()
+            animationCounter = animationCounter + 1
+        }
+        if (animationCounter == 2) {
+            animateBlackHole()
+            animationCounter = animationCounter + 1
+        }
+    }
+    
+    func animateBlackHole() {
+        var blackHoleAnimateImageArray = [UIImage]()
+        
+        for pictureNumber in 6...47
+        {
+            let imageName : String = "VoidGIF-\(pictureNumber).png"
+            let image  = UIImage(named:imageName)
+            blackHoleAnimateImageArray.append(image!)
+        }
+        
+        blackHoleAnimateImageView.animationImages = blackHoleAnimateImageArray
+        blackHoleAnimateImageView.animationDuration = 2
+        blackHoleAnimateImageView.startAnimating()
+        triangleAnimateImageView.stopAnimating()
+    }
     
     func animateTriangle() {
         
@@ -74,6 +108,7 @@ class VoidViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
+        animationTimeKeeper = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.animateView), userInfo: nil, repeats: true)
         animateTriangle()
     }
 
